@@ -1,0 +1,8 @@
+<mat-list *ngIf = "peopleRest | async as list">
+    <h3 mat-subheader>Peoples</h3>
+    <mat-list-item *ngFor="let people of list">
+      <h4 mat-line>{{people.name}}</h4>
+      <h4 mat-line>{{people.gender}}</h4>
+      <h4 mat-line>{{people.homeworld}}</h4>
+    </mat-list-item>
+  </mat-list>

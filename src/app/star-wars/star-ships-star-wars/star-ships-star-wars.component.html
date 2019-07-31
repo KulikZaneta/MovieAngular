@@ -1,0 +1,8 @@
+<mat-list *ngIf = "starShipRest | async as list">
+    <h3 mat-subheader>Star-ships</h3>
+    <mat-list-item *ngFor="let starShip of list">
+      <h4 mat-line>{{starShip.crew}}</h4>
+      <h4 mat-line>{{starShip.length}}</h4>
+      <h4 mat-line>{{starShip.name}}</h4>
+    </mat-list-item>
+  </mat-list>

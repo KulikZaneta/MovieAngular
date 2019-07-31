@@ -1,0 +1,9 @@
+<mat-list *ngIf = "planetRest | async as list">
+    <h3 mat-subheader>Planets</h3>
+    <mat-list-item *ngFor="let planet of list">
+      <h4 mat-line>{{planet.name}}</h4>
+      <h4 mat-line>{{planet.orbital_period}}</h4>
+      <h4 mat-line>{{planet.climate}}</h4>
+      <h4 mat-line>{{planet.terrain}}</h4>
+    </mat-list-item>
+  </mat-list>

@@ -1,0 +1,7 @@
+<mat-list *ngIf = "filmsRest | async as list">
+    <h3 mat-subheader>Movies</h3>
+    <mat-list-item *ngFor="let movie of list">
+      <h4 mat-line>{{movie.title}}</h4>
+    </mat-list-item>
+  </mat-list>
+
