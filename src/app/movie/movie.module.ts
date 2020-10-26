@@ -8,8 +8,6 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 
-
-
 const homeRoutes: Routes = [
   {
     path: 'list',

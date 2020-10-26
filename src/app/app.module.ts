@@ -13,11 +13,7 @@ import {
   MatListModule, 
   MatTableModule } from '@angular/material';
 import { ApiModule } from 'src/api/api.module';
-import { MovieModule } from './movie/movie.module';
-import { StarWarsModule } from './star-wars/star-wars.module';
-
-
-  
+import { MovieModule } from './movie/movie.module';  
 
 @NgModule({
   declarations: [
@@ -35,8 +31,7 @@ import { StarWarsModule } from './star-wars/star-wars.module';
     BrowserAnimationsModule,
     LayoutModule,
     ApiModule,
-    MovieModule,
-    StarWarsModule
+    MovieModule
   ],
   providers: [],
   bootstrap: [AppComponent]

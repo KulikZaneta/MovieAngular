@@ -8,9 +8,9 @@
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions *ngIf = "socialMedia | async as social">
-      <a class="social" href = "https://www.facebook.com/{{social.facebookId}}"> Facebook</a>
-      <a class="social" href = "https://www.imdb.com/title/{{social.imdbId}}">ImDb</a>
-      <a class="social" href = "https://www.instagram.com/{{social.instagramId}}">Instagram</a>
-      <a class="social" href = "https://twitter.com/{{social.twitterId}}">Twitter</a>
+      <a class="social" href = "https://www.facebook.com/{{social.facebookId}}" target="_blank"> Facebook</a>
+      <a class="social" href = "https://www.imdb.com/title/{{social.imdbId}}" target="_blank">ImDb</a>
+      <a class="social" href = "https://www.instagram.com/{{social.instagramId}}" target="_blank">Instagram</a>
+      <a class="social" href = "https://twitter.com/{{social.twitterId}}" target="_blank">Twitter</a>
     </mat-card-actions>
   </mat-card>
