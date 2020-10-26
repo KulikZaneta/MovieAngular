@@ -7,11 +7,6 @@
           <div *ngIf = "keyWord | async as keywords">keyword: <span *ngFor = "let k of keywords.keywords">{{k.name}}, </span></div>
         </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content *ngIf = "reviews | async as review">
-      <div *ngFor = 'let r of review.results'><p>
-        {{r.content}}
-      </p> </div>
-    </mat-card-content>
     <mat-card-actions *ngIf = "socialMedia | async as social">
       <a class="social" href = "https://www.facebook.com/{{social.facebookId}}"> Facebook</a>
       <a class="social" href = "https://www.imdb.com/title/{{social.imdbId}}">ImDb</a>
