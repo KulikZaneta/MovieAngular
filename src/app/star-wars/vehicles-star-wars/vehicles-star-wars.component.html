@@ -1,8 +1,0 @@
-<mat-list *ngIf = "vehicleRest | async as list">
-    <h3 mat-subheader>Vehicles</h3>
-    <mat-list-item *ngFor="let vehicle of list">
-      <h4 mat-line>{{vehicle.crew}}</h4>
-      <h4 mat-line>{{vehicle.model}}</h4>
-      <h4 mat-line>{{vehicle.name}}</h4>
-    </mat-list-item>
-  </mat-list>

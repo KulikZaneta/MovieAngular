@@ -1,8 +1,0 @@
-<mat-list *ngIf = "speciesRest | async as list">
-    <h3 mat-subheader>Species</h3>
-    <mat-list-item *ngFor="let species of list">
-      <h4 mat-line>{{species.average_height}}</h4>
-      <h4 mat-line>{{species.name}}</h4>
-      <h4 mat-line>{{species.homeworld}}</h4>
-    </mat-list-item>
-  </mat-list>
