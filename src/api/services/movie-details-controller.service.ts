@@ -8,8 +8,6 @@ import { Observable as __Observable } from 'rxjs';
 import { map as __map, filter as __filter } from 'rxjs/operators';
 
 import { KeywordRest } from '../models/keyword-rest';
-import { RelaseDateRest } from '../models/relase-date-rest';
-import { ReviewsRest } from '../models/reviews-rest';
 import { SocialMedia } from '../models/social-media';
 import { MovieDetailsCache } from '../models/movie-details-cache';
 
@@ -21,8 +19,6 @@ import { MovieDetailsCache } from '../models/movie-details-cache';
 })
 class MovieDetailsControllerService extends __BaseService {
   static readonly getKeywordsUsingGETPath = '/movie-details/keywords/{restMovieId}';
-  static readonly getRelaseDateUsingGETPath = '/movie-details/relase-dates/{restMovieId}';
-  static readonly getReviewsUsingGETPath = '/movie-details/reviews/{restMovieId}';
   static readonly getSocialMediaUsingGETPath = '/movie-details/social-media/{restMovieId}';
   static readonly getMovieDetailsIdUsingGETPath = '/movie-details/{id}';
 
@@ -66,78 +62,6 @@ class MovieDetailsControllerService extends __BaseService {
   getKeywordsUsingGET(restMovieId: number): __Observable<KeywordRest> {
     return this.getKeywordsUsingGETResponse(restMovieId).pipe(
       __map(_r => _r.body as KeywordRest)
-    );
-  }
-
-  /**
-   * @param restMovieId restMovieId
-   * @return OK
-   */
-  getRelaseDateUsingGETResponse(restMovieId: number): __Observable<__StrictHttpResponse<RelaseDateRest>> {
-    let __params = this.newParams();
-    let __headers = new HttpHeaders();
-    let __body: any = null;
-
-    let req = new HttpRequest<any>(
-      'GET',
-      this.rootUrl + `/movie-details/relase-dates/${restMovieId}`,
-      __body,
-      {
-        headers: __headers,
-        params: __params,
-        responseType: 'json'
-      });
-
-    return this.http.request<any>(req).pipe(
-      __filter(_r => _r instanceof HttpResponse),
-      __map((_r) => {
-        return _r as __StrictHttpResponse<RelaseDateRest>;
-      })
-    );
-  }
-  /**
-   * @param restMovieId restMovieId
-   * @return OK
-   */
-  getRelaseDateUsingGET(restMovieId: number): __Observable<RelaseDateRest> {
-    return this.getRelaseDateUsingGETResponse(restMovieId).pipe(
-      __map(_r => _r.body as RelaseDateRest)
-    );
-  }
-
-  /**
-   * @param restMovieId restMovieId
-   * @return OK
-   */
-  getReviewsUsingGETResponse(restMovieId: number): __Observable<__StrictHttpResponse<ReviewsRest>> {
-    let __params = this.newParams();
-    let __headers = new HttpHeaders();
-    let __body: any = null;
-
-    let req = new HttpRequest<any>(
-      'GET',
-      this.rootUrl + `/movie-details/reviews/${restMovieId}`,
-      __body,
-      {
-        headers: __headers,
-        params: __params,
-        responseType: 'json'
-      });
-
-    return this.http.request<any>(req).pipe(
-      __filter(_r => _r instanceof HttpResponse),
-      __map((_r) => {
-        return _r as __StrictHttpResponse<ReviewsRest>;
-      })
-    );
-  }
-  /**
-   * @param restMovieId restMovieId
-   * @return OK
-   */
-  getReviewsUsingGET(restMovieId: number): __Observable<ReviewsRest> {
-    return this.getReviewsUsingGETResponse(restMovieId).pipe(
-      __map(_r => _r.body as ReviewsRest)
     );
   }
 
